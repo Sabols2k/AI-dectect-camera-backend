@@ -19,9 +19,10 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
+const PORT = process.env.PORT || 3000;
 const dbURI = 'mongodb+srv://chaudd:chau1234@aidetectanomaly.vdi9u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(PORT))
   .catch((err) => console.log(err));
 
 // routes
